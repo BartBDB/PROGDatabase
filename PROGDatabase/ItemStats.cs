@@ -10,11 +10,13 @@ namespace PROGDatabase
     {
         public string Name { get; private set; }
         public string Description { get; private set; }
+        public string Type { get; private set; }
 
-        protected ItemStats(string name, string description)
+        protected ItemStats(string name, string description, string type)
         {
             this.Name = name;
             this.Description = description;
+            this.Type = type;
         }
     }
 }

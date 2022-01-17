@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace PROGDatabase
 {
-    public class WoodenSword : ItemStats
+    class WoodenSword : ItemStats
     {
-        private int damage = 2;
-        public WoodenSword(string name, string description) : base(name, description)
+        private int damage;
+        public WoodenSword(string name, string description, int damage, string type) : base(name, description, type)
         {
+            this.damage = damage;
         }
     }
 }

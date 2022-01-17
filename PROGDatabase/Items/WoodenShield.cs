@@ -8,9 +8,10 @@ namespace PROGDatabase
 {
     class WoodenShield : ItemStats
     {
-        private int defense = 2;
-        public WoodenShield(string name, string description) : base(name, description)
+        private int defense;
+        public WoodenShield(string name, string description, int defense, string type) : base(name, description, type)
         {
+            this.defense = defense;
         }
     }
 }
