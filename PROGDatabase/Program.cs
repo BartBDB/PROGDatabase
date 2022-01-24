@@ -9,14 +9,18 @@ namespace PROGDatabase
         {
             Database database = new Database();
 
-            database.AddData(new Item("Sword"));
-            database.AddData(new Item("Shield"));
+            ItemStats woodenSword = new WoodenSword("Wooden sword",
+            "A very basic wooden sword. Does the job either as a weapon or as firewood. It may be wood, but sitting on top of it is not recommended.",
+            2,
+            "Weapons");
 
-            List<Item> items = database.RetrieveData();
+            database.AddData(woodenSword);
+
+            List<ItemStats> items = database.RetrieveData();
             
             for (int i = 0; i < items.Count; i++)
             {
-                Console.WriteLine(items[i].name);
+                Console.WriteLine(items[i].Name);
             }
         }
     }

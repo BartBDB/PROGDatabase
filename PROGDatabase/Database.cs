@@ -8,19 +8,19 @@ namespace PROGDatabase
 {
     class Database
     {
-        private List<Item> _items;
+        private List<ItemStats> _items;
 
         public Database()
         {
-            _items = new List<Item>();
+            _items = new List<ItemStats>();
         }
 
-        public void AddData(Item item)
+        public void AddData(ItemStats item)
         {
             _items.Add(item);
         }
 
-        public List<Item> RetrieveData()
+        public List<ItemStats> RetrieveData()
         {
             return _items;
         }

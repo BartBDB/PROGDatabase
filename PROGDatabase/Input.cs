@@ -8,6 +8,6 @@ namespace PROGDatabase.Items
 {
     class Input
     {
-        
+
     }
 }
