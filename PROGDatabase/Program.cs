@@ -9,7 +9,7 @@ namespace PROGDatabase
         {
             Input inputThing = new Input();
 
-            inputThing.InputCommand(3);
+            inputThing.InputCommand(3, 2);
         }
     }
 }
