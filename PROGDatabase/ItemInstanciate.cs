@@ -8,9 +8,12 @@ namespace PROGDatabase
 {
     class ItemInstanciate
     {
+        Database database = new Database();
+        public List<string> types = new List<string>();
+        
         public void AddItems()
         {
-            Database database = new Database();
+            List<ItemStats> items = database.RetrieveData();
 
             ItemStats woodenSword = new WoodenSword("Wooden sword",
                 "A very basic wooden sword. Does the job either as a weapon or as firewood. It may be wood, but sitting on top of it is not recommended.",
@@ -43,18 +46,20 @@ namespace PROGDatabase
                 "Potions");
 
             database.AddData(woodenSword);
-            database.AddData(woodenShield);
             database.AddData(ironSword);
+            database.AddData(woodenShield);
             database.AddData(ironShield);
             database.AddData(smallHealingPotion);
             database.AddData(invisiblityPotion);
 
-            List<ItemStats> items = database.RetrieveData();
+            types.Add("Weapons");
+            types.Add("Shields");
+            types.Add("Potions");
 
-            for (int i = 0; i < items.Count; i++)
+            /*for (int i = 0; i < types.Count; i++)
             {
                 Console.WriteLine(items[i].Name);
-            }
+            }*/
         }
     }
 }

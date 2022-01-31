@@ -7,9 +7,9 @@ namespace PROGDatabase
     {
         static void Main(string[] args)
         {
-            ItemInstanciate instanciate = new ItemInstanciate();
+            Input inputThing = new Input();
 
-            instanciate.AddItems();
+            inputThing.InputCommand(3);
         }
     }
 }
