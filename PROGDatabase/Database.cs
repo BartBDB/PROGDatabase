@@ -24,6 +24,21 @@ namespace PROGDatabase
         {
             return _items;
         }
+
+       
+        public ItemStats[] GetItemsByType(string type)
+        {
+            List<ItemStats> filteredItems = new List<ItemStats>();
+            foreach(ItemStats item in _items)
+            {
+                if (item.Type == type)
+                {
+                    filteredItems.Add(item);
+                }
+            }
+
+            return filteredItems.ToArray();
+        }
     }
 }
 

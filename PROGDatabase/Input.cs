@@ -12,15 +12,16 @@ namespace PROGDatabase
         {
             int input;
             ItemInstanciate instanciate = new ItemInstanciate();
-
-            instanciate.AddItems();
+            Database data = instanciate.AddItems();
+           
 
             for (int i = 0; i < instanciate.types.Count; i++)
             {
-                Console.WriteLine(i+1 + ": " + instanciate.types[i]);   
-                
+                Console.WriteLine(i+1 + ": " + instanciate.types[i]);    
             }
-            Console.WriteLine("Type het getal in van welk soort item je wilt");
+
+            Console.WriteLine("Type in the number of the category you want to see.");
+
             if (int.TryParse(Console.ReadLine(), out input))
             {
                 if (input < maxCategories)
@@ -28,18 +29,86 @@ namespace PROGDatabase
                     input -= 1;
                     if (input == 0) //weapons
                     {
-                        Console.WriteLine("Available weapons in the database:");
-                        Console.WriteLine();
-                    }
-                    
+                        Console.WriteLine("\nAvailable weapons in the database:");
+                        var filteredItems = data.GetItemsByType("weapons");
+                        for (int i = 0; i < filteredItems.Length; i++) //scan through available weapons
+                        {
+                            Console.WriteLine(i + 1 + ": " + filteredItems[i].Name);
+                        }
+
+                        if (int.TryParse(Console.ReadLine(), out input))
+                        {
+                            if (input < maxItems)
+                            { 
+                                input -= 1;
+                                if (input == 0) //weapon 1
+                                {
+                                    Console.WriteLine();
+                                }
+                                if (input == 1) //weapon 2
+                                {
+                                    Console.WriteLine();
+                                }
+
+                                return input;
+                            }
+                        }
+                    }  
+
                     if (input == 1) //shields
                     {
-                        Console.WriteLine("Available shields in the database:");
+                        Console.WriteLine("\nAvailable weapons in the database:");
+                        var filteredItems = data.GetItemsByType("weapons");
+                        for (int i = 0; i < filteredItems.Length; i++) //scan through available weapons
+                        {
+                            Console.WriteLine(i + 1 + ": " + filteredItems[i]);
+                        }
+
+                        if (int.TryParse(Console.ReadLine(), out input))
+                        {
+                            if (input < maxItems)
+                            {
+                                input -= 1;
+                                if (input == 0) //weapon 1
+                                {
+                                    Console.WriteLine();
+                                }
+                                if (input == 1) //weapon 2
+                                {
+                                    Console.WriteLine();
+                                }
+
+                                return input;
+                            }
+                        }
                     }
 
                     if (input == 2) //potions
                     {
-                        Console.WriteLine("Available potions in the database:");
+                        Console.WriteLine("\nAvailable weapons in the database:");
+                        var filteredItems = data.GetItemsByType("weapons");
+                        for (int i = 0; i < filteredItems.Length; i++) //scan through available weapons
+                        {
+                            Console.WriteLine(i + 1 + ": " + filteredItems[i]);
+                        }
+
+                        if (int.TryParse(Console.ReadLine(), out input))
+                        {
+                            if (input < maxItems)
+                            {
+                                input -= 1;
+                                if (input == 0) //weapon 1
+                                {
+                                    Console.WriteLine();
+                                }
+                                if (input == 1) //weapon 2
+                                {
+                                    Console.WriteLine();
+                                }
+
+                                return input;
+                            }
+                        }
                     }
 
                     return input;
